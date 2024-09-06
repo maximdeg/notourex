@@ -1,5 +1,5 @@
 {
-   "name": "natours",
+   "name": "natourex",
    "version": "1.0.0",
    "description": "Node, express, mongoDB",
    "main": "app.js",
