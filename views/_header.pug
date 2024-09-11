@@ -5,10 +5,29 @@ header.header
         img(src='/img/logo-white.png' alt='Natourex logo')
     nav.nav.nav--user
         if user
-            a.nav__el.nav__el--logout Log out
-            a.nav__el(href='/me')
-                img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
-                spna= user.name.split(' ')[0]
-        else    
-            a.nav__el(href='/login') Log In 
-            a.nav__el.nav__el--cta(href='#') Sign Up
+            input#check(type="checkbox")
+            label.checkbtn(for="check")
+                svg.header-menu__icon
+                    use(xlink:href='/img/icons.svg#icon-menu')
+            .nav-mobile
+                a.nav__el.nav__el--logout Log out
+                a.nav__el(href='/me')
+                    img.nav__user-img(src=`/img/users/${user.photo}` alt=`Photo of ${user.name}`)
+                    span= user.name.split(' ')[0]
+        else
+            input#check(type="checkbox")
+            label.checkbtn(for="check")
+                svg.header-menu__icon
+                    use(xlink:href='/img/icons.svg#icon-menu')   
+            .nav-mobile 
+                a.nav__el(href='/login') Log In 
+                a.nav__el.nav__el--cta(href='#') Sign Up
+
+
+//- input#checkbox.checkbox.visuallyHidden(type="checkbox")
+//-     label(for= "checkbox")
+//-         .hamburguer.hamburguer3
+//-             span.bar.bar1 
+//-             span.bar.bar2 
+//-             span.bar.bar3 
+//-             span.bar.bar4 
