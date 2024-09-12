@@ -18,7 +18,6 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 });
 
 exports.getTour = catchAsync(async (req, res, next) => {
-   // Get data for the requested tour
    const tour = await Tour.findOne({ slug: req.params.slug }).populate({
       path: 'reviews',
       fields: 'review rating user',
@@ -27,9 +26,7 @@ exports.getTour = catchAsync(async (req, res, next) => {
    if (!tour) {
       return next(new AppError('There is no tour with that name', 404));
    }
-   // Build template
 
-   // Render template using data
    res.status(200)
       .set('Content-Security-Policy', "frame-src 'self'")
       .render('tour', {
@@ -43,6 +40,14 @@ exports.getLoginForm = (req, res, next) => {
       .set('Content-Security-Policy', "frame-src 'self'")
       .render('login', {
          title: 'Log into your account',
+      });
+};
+
+exports.getSignupForm = (req, res, next) => {
+   res.status(200)
+      .set('Content-Security-Policy', "frame-src 'self'")
+      .render('signup', {
+         title: 'Create new account',
       });
 };
 
