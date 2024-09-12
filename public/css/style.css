@@ -804,7 +804,7 @@ body {
    margin-top: calc(0px - var(--section-rotate));
    padding: 3rem;
    padding-bottom: 11rem;
-   padding-top: calc(15rem + var(--section-rotate));
+   padding-top: calc(25rem + var(--section-rotate));
    background-color: var(--fourth-color);
 }
 
@@ -882,7 +882,7 @@ body {
    .cta {
       display: flex;
       flex-direction: column;
-      padding: 5rem 2.5rem;
+      padding: 3.5rem 2.5rem;
       overflow: visible;
    }
 
